@@ -1,5 +1,7 @@
 FROM mediforce-golden-image
 
+RUN apt-get update && apt-get install -y --no-install-recommends openssh-client && rm -rf /var/lib/apt/lists/*
+
 ARG CDISC_RULES_ENGINE_REF=v0.16.0
 
 RUN git clone --depth 1 --branch "${CDISC_RULES_ENGINE_REF}" https://github.com/cdisc-org/cdisc-rules-engine.git /app/cdisc-rules-engine \
