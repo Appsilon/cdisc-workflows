@@ -1,0 +1,16 @@
+.DS_Store
+**/.venv
+**/__pycache__
+**/*.pyc
+*.egg-info/
+
+# generated test outputs
+protocol-to-synthetic-sdtm/test/00_raw/
+protocol-to-synthetic-sdtm/test/01_usdm/
+protocol-to-synthetic-sdtm/test/02_sdtm_spec/
+protocol-to-synthetic-sdtm/test/03_synthetic_sdtm/
+protocol-to-synthetic-sdtm/test/06_sdtm_xpt/
+protocol-to-synthetic-sdtm/test/07_core_report/core_sdtmig34.*
+protocol-to-synthetic-sdtm/test/07_core_report/summary.json
+protocol-to-synthetic-sdtm/test/manifest.json
+protocol-to-synthetic-sdtm/test/protocol/
