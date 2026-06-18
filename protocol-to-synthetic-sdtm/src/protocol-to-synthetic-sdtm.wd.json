@@ -5,7 +5,7 @@
   "description": "Given one ClinicalTrials.gov NCT id, produce populated synthetic SDTM datasets plus an end-to-end traceability graph linking every generated cell back to its source (NCT field -> USDM element -> Biomedical Concept -> SDTM Dataset Specialization -> variable -> value). CDISC AI Innovation Challenge 2026, Use Case 1.",
   "repo": {
     "url": "https://github.com/Appsilon/cdisc-workflows",
-    "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+    "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
     "auth": "GITHUB_TOKEN"
   },
   "workspace": {
@@ -80,7 +80,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 00_fetch_study.py"
@@ -105,7 +105,7 @@
         "model": "~anthropic/claude-sonnet-latest",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "confidenceThreshold": 0.7,
@@ -157,7 +157,7 @@
         "model": "~anthropic/claude-sonnet-latest",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "confidenceThreshold": 0.7,
@@ -206,7 +206,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 02_build_sdtm_spec.py"
@@ -225,7 +225,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 03_generate_synthetic_sdtm.py"
@@ -244,7 +244,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 04_validate.py"
@@ -266,7 +266,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 07_core_report/run_core_validation.sh"
@@ -285,7 +285,7 @@
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "commit": "6d076816063a061a1efd02085fdf695afdac3c73",
         "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 05_write_manifest.py"
