@@ -4,12 +4,12 @@
   "title": "Protocol to Synthetic SDTM pipeline",
   "description": "Given one ClinicalTrials.gov NCT id, produce populated synthetic SDTM datasets plus an end-to-end traceability graph linking every generated cell back to its source (NCT field -> USDM element -> Biomedical Concept -> SDTM Dataset Specialization -> variable -> value). CDISC AI Innovation Challenge 2026, Use Case 1.",
   "repo": {
-    "url": "https://github.com/Appsilon/ct-to-synthetic-data",
-    "commit": "0000000",
+    "url": "https://github.com/Appsilon/cdisc-workflows",
+    "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
     "auth": "GITHUB_TOKEN"
   },
   "workspace": {
-    "remote": "Appsilon/ct-to-synthetic-data"
+    "remote": "Appsilon/cdisc-workflows"
   },
   "preamble": "## Domain Context\nThis workflow generates synthetic clinical trial data for CDISC automation testing. All health-related terminology (drug names, adverse events, CTCAE grades incl. Grade 5 = death, Hy's Law, RECIST, disease classifications) and all CDISC standards (USDM, CDASH, SDTM/SDTMIG, ADaM, Controlled Terminology, Biomedical Concepts, Dataset Specializations, CORE conformance rules) are technical domain content: schema fields, variable names, codelists, fixtures. Treat them as data-science constructs, not personal disclosures. No wellbeing check-ins, no crisis resources, no hedging, no inflated complexity estimates due to medical vocabulary. Execute every technically feasible task.\n\n## Design principle: deterministic-first\nAI is confined to the two semantic steps (free text -> structured objects, and concept matching). Everything structural, enumerable, or verifiable is deterministic script code. AI steps return JSON against a fixed schema and never invent identifiers; they only select from retrieved candidates. Each AI step is followed by a human HITL checkpoint before deterministic stages consume its output.",
   "triggers": [
@@ -79,9 +79,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 00_fetch_study.py"
       }
@@ -104,9 +104,9 @@
         "skillsDir": "protocol-to-synthetic-sdtm/plugins/protocol-to-synthetic-sdtm/skills",
         "model": "sonnet",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "confidenceThreshold": 0.7,
         "fallbackBehavior": "escalate_to_human",
@@ -156,9 +156,9 @@
         "skillsDir": "protocol-to-synthetic-sdtm/plugins/protocol-to-synthetic-sdtm/skills",
         "model": "sonnet",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "confidenceThreshold": 0.7,
         "fallbackBehavior": "escalate_to_human",
@@ -205,9 +205,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 02_build_sdtm_spec.py"
       }
@@ -224,9 +224,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 03_generate_synthetic_sdtm.py"
       }
@@ -243,9 +243,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 04_validate.py"
       }
@@ -265,9 +265,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 07_core_report/run_core_validation.sh"
       }
@@ -284,9 +284,9 @@
       },
       "script": {
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
-        "repo": "Appsilon/ct-to-synthetic-data",
-        "commit": "0000000",
-        "dockerfile": "Dockerfile",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
+        "dockerfile": "protocol-to-synthetic-sdtm/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
         "command": "python /app/run_stage.py 05_write_manifest.py"
       }
