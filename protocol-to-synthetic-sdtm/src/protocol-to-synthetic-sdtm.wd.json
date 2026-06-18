@@ -102,7 +102,7 @@
       "agent": {
         "skill": "extract-usdm",
         "skillsDir": "protocol-to-synthetic-sdtm/plugins/protocol-to-synthetic-sdtm/skills",
-        "model": "sonnet",
+        "model": "~anthropic/claude-sonnet-latest",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
         "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
@@ -154,7 +154,7 @@
       "agent": {
         "skill": "match-bc",
         "skillsDir": "protocol-to-synthetic-sdtm/plugins/protocol-to-synthetic-sdtm/skills",
-        "model": "sonnet",
+        "model": "~anthropic/claude-sonnet-latest",
         "image": "mediforce-agent:protocol-to-synthetic-sdtm",
         "repo": "Appsilon/cdisc-workflows",
         "commit": "27b45ed5a68fbc37f06354ca49db38bf352447f8",
