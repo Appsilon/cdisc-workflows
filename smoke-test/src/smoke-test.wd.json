@@ -5,7 +5,7 @@
   "description": "Minimal 2-step workflow to verify container image build, workspace git clone, and script execution work end-to-end on this deployment.",
   "repo": {
     "url": "https://github.com/Appsilon/cdisc-workflows",
-    "commit": "b3a91d6e5047500141dfd372efe518c041a563d7",
+    "commit": "efe701d2e0a5f375c78872bb2f295edf98861d33",
     "auth": "GITHUB_TOKEN"
   },
   "workspace": {
@@ -39,10 +39,10 @@
       "script": {
         "image": "mediforce-agent:smoke-test",
         "repo": "Appsilon/cdisc-workflows",
-        "commit": "b3a91d6e5047500141dfd372efe518c041a563d7",
+        "commit": "efe701d2e0a5f375c78872bb2f295edf98861d33",
         "dockerfile": "smoke-test/Dockerfile",
         "repoAuth": "GITHUB_TOKEN",
-        "command": "python /app/run.py"
+        "command": "python3 /app/run.py"
       }
     },
     {
