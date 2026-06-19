@@ -1,0 +1,59 @@
+{
+  "name": "smoke-test",
+  "namespace": "krystian-zielinski",
+  "title": "Container Environment Smoke Test",
+  "description": "Minimal 2-step workflow to verify container image build, workspace git clone, and script execution work end-to-end on this deployment.",
+  "repo": {
+    "url": "https://github.com/Appsilon/cdisc-workflows",
+    "commit": "b3a91d6e5047500141dfd372efe518c041a563d7",
+    "auth": "GITHUB_TOKEN"
+  },
+  "workspace": {
+    "remote": "Appsilon/cdisc-workflows",
+    "remoteAuth": "GITHUB_TOKEN"
+  },
+  "triggers": [
+    {
+      "name": "manual",
+      "type": "manual"
+    }
+  ],
+  "env": {
+    "GITHUB_TOKEN": "{{GITHUB_TOKEN}}"
+  },
+  "steps": [
+    {
+      "id": "start",
+      "name": "Start",
+      "type": "creation",
+      "executor": "human",
+      "description": "Trigger the smoke test."
+    },
+    {
+      "id": "run-container",
+      "name": "Run Container",
+      "type": "creation",
+      "executor": "script",
+      "plugin": "script-container",
+      "description": "Build the smoke-test image and run run.py. Writes hello.txt + diagnostics.json to /output.",
+      "script": {
+        "image": "mediforce-agent:smoke-test",
+        "repo": "Appsilon/cdisc-workflows",
+        "commit": "b3a91d6e5047500141dfd372efe518c041a563d7",
+        "dockerfile": "smoke-test/Dockerfile",
+        "repoAuth": "GITHUB_TOKEN",
+        "command": "python /app/run.py"
+      }
+    },
+    {
+      "id": "done",
+      "name": "Done",
+      "type": "terminal",
+      "executor": "human"
+    }
+  ],
+  "transitions": [
+    { "from": "start", "to": "run-container" },
+    { "from": "run-container", "to": "done" }
+  ]
+}

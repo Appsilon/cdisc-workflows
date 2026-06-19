@@ -1,0 +1,14 @@
+.DS_Store
+**/.venv
+**/__pycache__
+**/*.pyc
+
+test/00_raw
+test/01_usdm
+test/02_sdtm_spec
+test/03_synthetic_sdtm
+test/06_sdtm_xpt
+test/07_core_report/core_sdtmig34.*
+test/07_core_report/summary.json
+test/manifest.json
+test/protocol
